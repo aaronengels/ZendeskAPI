@@ -14,9 +14,9 @@ begin {
 
   # Specify Kaseya API Parameters
   $params = @{
-    Domain	=  'Enter your Zendesk domain'
-    Email  	=  'Enter your Email Address'
-    Key  	  =  'Enter your API Key'
+    Domain  =  'Enter your Zendesk domain'
+    Email   =  'Enter your Email Address'
+    Key     =  'Enter your API Key'
   }
 
   # Set Module API Parameters
