@@ -31,9 +31,9 @@ process {
 
   # Put your code here
   ForEach ($activity in Get-ZendeskTicketActivities)
-	{
-		if($activity.verb -eq 'tickets.assignment')
-		{
+  {
+    if($activity.verb -eq 'tickets.assignment')
+    {
       $Title = $activity.title
       $TicketUrl = 'https://domain.zendesk.com/agent/tickets/' + $activity.object.ticket.id
       $Button = New-BTButton -Content 'Open Ticket' -Arguments $TicketUrl
@@ -49,7 +49,6 @@ end {
 }
 
 ```
-
 
 # Zendesk API
 
