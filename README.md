@@ -11,12 +11,11 @@ begin {
 Import-Module ZendeskAPI -Force
 Import-Module BurntToast -Force
 
-
 # Specify Kaseya API Parameters
 $params = @{
-		Domain	=  'Enter your Zendesk domain'
-		Email  	=  'Enter your Email Address'
-		Key  	  =  'Enter your API Key'
+Domain	=  'Enter your Zendesk domain'
+Email  	=  'Enter your Email Address'
+Key  	  =  'Enter your API Key'
 }
 
 # Set Module API Parameters
@@ -29,17 +28,16 @@ Remove-Variable params -Force
 
 process {
 
-
 # Put your code here
 ForEach ($activity in Get-ZendeskTicketActivities)
 {
-	if($activity.verb -eq 'tickets.assignment')
-	{
-		$Title = $activity.title
-		$TicketUrl = 'https://domain.zendesk.com/agent/tickets/' + $activity.object.ticket.id
-		$Button = New-BTButton -Content 'Open Ticket' -Arguments $TicketUrl
-		New-BurntToastNotification -Text $Title -Button $Button
-	}
+if($activity.verb -eq 'tickets.assignment')
+{
+$Title = $activity.title
+$TicketUrl = 'https://domain.zendesk.com/agent/tickets/' + $activity.object.ticket.id
+$Button = New-BTButton -Content 'Open Ticket' -Arguments $TicketUrl
+New-BurntToastNotification -Text $Title -Button $Button
+}
 } 
 
 }
