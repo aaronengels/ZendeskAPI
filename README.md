@@ -3,7 +3,7 @@ This module is designed to make it easier to use the DattoRMM API in your PowerS
 
 # Basics
 
-You can install the module from the [PowerShell Gallery](https://www.powershellgallery.com/packages/ZendeskAPI/1.0) and use example below to get started.
+You can install the module from the [PowerShell Gallery](https://www.powershellgallery.com/packages/ZendeskAPI/1.0) and use example below to get started. This script will create Windows 10 toast notifications for any Zendesk tickets assigned to you the past 30 days.
 
 ```powershell
 begin {
@@ -49,10 +49,6 @@ end {
 	# Remove API Parameters
 	Remove-ZendeskApiParameters
 }
-
-
-
-# use query assignee:aengels@mspbuilder.com updated>5minutes
 
 ```
 
