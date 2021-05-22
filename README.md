@@ -30,15 +30,12 @@ begin {
 process {
 
   # Put your code here
-  ForEach ($activity in Get-ZendeskTicketActivities)
+  ForEach ($activity in Get-ZendeskTicketActivities | Where-Object {$_.verb -eq 'tickets.assignment'})
   {
-    if($activity.verb -eq 'tickets.assignment')
-    {
-      $Title = $activity.title
-      $TicketUrl = 'https://domain.zendesk.com/agent/tickets/' + $activity.object.ticket.id
-      $Button = New-BTButton -Content 'Open Ticket' -Arguments $TicketUrl
-      New-BurntToastNotification -Text $Title -Button $Button
-    }
+    $Title = $activity.title
+    $TicketUrl = 'https://domain.zendesk.com/agent/tickets/' + $activity.object.ticket.id
+    $Button = New-BTButton -Content 'Open Ticket' -Arguments $TicketUrl
+    New-BurntToastNotification -Text $Title -Button $Button
   } 
 }
 
