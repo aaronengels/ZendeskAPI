@@ -1,8 +1,11 @@
 ﻿<#
  
 	.SYNOPSIS
-	A PowerShell module that connects to the Zendesk API API.
+	A PowerShell module that connects to the Datto RMM API.
 
+	.DESCRIPTION
+	A PowerShell module that connects to the Datto RMM API.
+	
 #>
 
 # Import functions
