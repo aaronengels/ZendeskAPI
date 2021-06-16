@@ -33,7 +33,7 @@ process {
   ForEach ($activity in Get-ZendeskTicketActivities | Where-Object {$_.verb -eq 'tickets.assignment'})
   {
     $Title = $activity.title
-    $TicketUrl = 'https://domain.zendesk.com/agent/tickets/' + $activity.object.ticket.id
+    $TicketUrl = 'https://domain.zendesk.com/agent/tickets/' + $target.object.ticket.id
     $Button = New-BTButton -Content 'Open Ticket' -Arguments $TicketUrl
     New-BurntToastNotification -Text $Title -Button $Button
   } 
