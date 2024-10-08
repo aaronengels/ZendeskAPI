@@ -49,7 +49,7 @@ end {
 
 # Zendesk API
 
-You'll find more information how to use the Zendesk API and create your API key at https://developer.zendesk.com/rest_api/docs/support/getting_started
+You'll find more information how to use the Zendesk API and create your API key at https://developer.zendesk.com/documentation/api-basics/
 
 # Release notes
 
